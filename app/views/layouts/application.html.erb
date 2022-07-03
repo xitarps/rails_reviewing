@@ -11,12 +11,7 @@
   </head>
 
   <body>
-    <% if notice %>
-      <%= notice %>
-    <% end %>
-    <% if alert %>
-      <%= alert %>
-    <% end %>
+    <%= render 'shared/messages' %>
     <%= yield %>
   </body>
 </html>

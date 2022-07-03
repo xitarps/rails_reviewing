@@ -1,27 +1,3 @@
 <h2>Novo</h2>
 
-<% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |error| %>
-    <p><%= error %></p>
-  <% end %>
-<% end %>
-
-<%= form_with model: @post, remote: false do |f| %>
-
-  <p>
-    <%= f.label :title, "Titulo" %>
-    <br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :body, "Descrição" %>
-    <br>
-    <%= f.text_field :body %>
-  </p>
-
-  <p>
-    <%= f.submit 'Salvar' %>
-  </p>
-
-<% end %>
+<%= render 'form', post: @post %>

@@ -1,0 +1,21 @@
+<%= render 'shared/errors', object: post %>
+
+<%= form_with model: post, remote: false do |f| %>
+
+  <p>
+    <%= f.label :title, "Titulo" %>
+    <br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body, "Descrição" %>
+    <br>
+    <%= f.text_field :body %>
+  </p>
+
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+
+<% end %>

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    return redirect_to @post if @post.save
+    return redirect_to @post, notice: "Salvo com sucesso." if @post.save
 
     render :new
   end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    return redirect_to @post if @post.update(post_params)
+    return redirect_to @post, notice: "Atualizado com sucesso." if @post.update(post_params)
 
     render :new
   end
