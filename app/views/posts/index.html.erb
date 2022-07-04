@@ -1,16 +1,36 @@
 <h2>Posts</h2>
 
-<%= link_to 'Novo post', new_post_path %>
+<%= link_to 'Novo post', new_post_path, class: "btn btn-link" %>
 
-<hr>
+<hr class="divider">
 
-<% @posts.each do |post| %>
-  <p>
-    <%= link_to post, class: 'link' do %>
-      <%= post.title.truncate(10) %> | 
-    <% end %>
-    <%= post.body.truncate(10) %> | 
-    <%= link_to 'Editar', edit_post_path(post) %> | 
-    <%= link_to 'Apagar', post_path(post), method: :delete%>
+<section>
+  <p class="post_line">
+    Title | 
+    Desc.
+    <span class="actions">
+    Actions
+    </span>
   </p>
-<% end  %>
+  <hr class="divider">
+  <% @posts.each do |post| %>
+    <p class="post_line">
+      <%= link_to post, class: 'link' do %>
+        <%= post.title.truncate(10) %>
+      <% end %>
+      <%= post.body.truncate(10) %>
+      <span class="actions">
+        <%= link_to 'Editar', edit_post_path(post), class: "btn btn-edit" %> | 
+        <%= link_to 'Apagar', post_path(post), method: :delete, class: "btn btn-delete" %>
+      </span>
+    </p>
+  <% end  %>
+  
+  <% if @posts.empty? %>
+    <p class="message notice">
+      Oops, nada para ver por aqui...
+    </p>
+    
+  <% end %>
+  
+</section>

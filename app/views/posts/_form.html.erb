@@ -1,5 +1,7 @@
 <%= render 'shared/errors', object: post %>
 
+<%= link_to 'Voltar', posts_path, class: "btn btn-link" %>
+
 <%= form_with model: post, remote: false do |f| %>
 
   <p>
@@ -14,8 +16,21 @@
     <%= f.text_field :body %>
   </p>
 
+
+  <%= f.submit class: 'hidden', id: 'post_submit'%>
+
   <p>
-    <%= f.submit 'Salvar' %>
+    <% if %w[new create].include? action_name %>
+
+      <%= link_to 'Guardar', "javascript:document.querySelector('#post_submit').click()",
+                  class: 'btn btn-persist',
+                  method: :post %>
+    <% end %>
+      <% if %w[edit update].include? action_name %>
+      <%= link_to 'Modificar', "javascript:document.querySelector('#post_submit').click()",
+                  class: 'btn btn-persist',
+                  method: :put  %>
+    <% end %>
   </p>
 
 <% end %>
