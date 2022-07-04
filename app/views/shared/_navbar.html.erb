@@ -6,9 +6,16 @@
 
   </div>
   <div class="navbar_group navbar_last_group">
+    <% unless signed_in? %>
+      <%= link_to 'Sing in', new_user_session_path, class: "navbar-text navbar_link #{'navbar_selected' if request.path == new_user_session_path} " %>
+    <% else %>
+      <%= link_to current_user.email, edit_user_registration_path, class: "navbar-text navbar_link #{'navbar_selected' if request.path == edit_user_registration_path}" %>
+      <%= link_to 'Sing out', destroy_user_session_path, class: "navbar-text navbar_link", method: :delete %>
 
-      <%= link_to 'Home', root_path, class: "navbar-text navbar_link" %>
-      <%= link_to 'Home', root_path, class: "navbar-text navbar_link" %>
+      <%# <%= link_to 'Home', root_path, class: "navbar-text navbar_link" %>
+      <%# <%= link_to 'Home', root_path, class: "navbar-text navbar_link" %>
+    <% end %>
+    
 
   </div>
 </div>
