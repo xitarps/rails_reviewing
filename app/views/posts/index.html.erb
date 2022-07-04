@@ -16,7 +16,7 @@
   <% @posts.each do |post| %>
     <p class="post_line">
       <%= link_to post, class: 'link' do %>
-        <%= post.title.truncate(10) %>
+        <%= post.title.truncate(10) %> | 
       <% end %>
       <%= post.body.truncate(10) %>
       <span class="actions">

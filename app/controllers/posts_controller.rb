@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_post, only: %i[ show edit update destroy]
+  before_action :fetch_post, only: %i[ edit update destroy ]
 
   def index
     @posts = Post.all
   end
 
   # view
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   # view
   def new
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
 
     return redirect_to @post, notice: "Salvo com sucesso." if @post.save
 
@@ -44,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def fetch_post
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 end
