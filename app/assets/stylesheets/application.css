@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  padding: 0;
+  margin: 0;
+ }
  section {
   display: flex;
   flex-direction: column;
@@ -28,6 +32,7 @@
  .post_line {
   display: flex;
   justify-content: space-between;
+  margin: 10px 0;
  }
 
  .actions {
@@ -48,6 +53,7 @@
   color: black;
   padding: 5px;
   border-radius: 5px;
+  margin-top: 5px;
  }
  .btn:hover {
   color: white;
@@ -66,4 +72,49 @@
  }
  .hidden {
   display: none;
+ }
+ .navbar {
+  display: flex;
+  width: 100%;
+  background-color: rgb(210, 210, 210);
+  justify-content: space-between;
+ }
+ .navbar_group {
+  width: 33%;
+  padding: 0;
+  /* background-color: rgb(166, 255, 0); */
+  display: flex;
+  margin: 0 10px;
+ }
+ .navbar_first_group {
+  justify-content: start;
+ }
+ .navbar_last_group {
+  justify-content: end;
+ }
+ .navbar_title {
+  background-color: rgb(210, 210, 210);
+  padding: 5px;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.4s;
+  font-weight: 600;
+ }
+ .navbar-text {
+  color: black;
+ }
+ .navbar_link {
+  background-color: rgb(210, 210, 210);
+  padding: 5px;
+  margin: 0;
+  font-size: 18px;
+  transition: 0.4s;
+ }
+ .navbar_link:hover {
+  color: white;
+  background-color: rgb(156, 156, 156);
+ }
+ .navbar_selected {
+  color: white;
+  background-color: rgb(156, 156, 156);
  }

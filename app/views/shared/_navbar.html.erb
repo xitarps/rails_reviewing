@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="navbar_group navbar_first_group">
+      <%= link_to 'Home', root_path, class: "navbar-text navbar_title" %>
+      <%= link_to 'Posts', posts_path, class: "navbar-text navbar_link #{'navbar_selected' if request.path == posts_path} " %>
+      <%= link_to 'Home', root_path, class: "navbar-text navbar_link #{'navbar_selected' if request.path == root_path} " %>
+
+  </div>
+  <div class="navbar_group navbar_last_group">
+
+      <%= link_to 'Home', root_path, class: "navbar-text navbar_link" %>
+      <%= link_to 'Home', root_path, class: "navbar-text navbar_link" %>
+
+  </div>
+</div>

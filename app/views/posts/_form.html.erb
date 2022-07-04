@@ -19,7 +19,7 @@
 
   <%= f.submit class: 'hidden', id: 'post_submit'%>
 
-  <p>
+  <p class="container">
     <% if %w[new create].include? action_name %>
 
       <%= link_to 'Guardar', "javascript:document.querySelector('#post_submit').click()",
