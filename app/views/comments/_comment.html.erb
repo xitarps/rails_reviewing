@@ -1,0 +1,15 @@
+<p>
+  <%= comment.body %>
+</p>
+<cite>
+  <%= comment.user.username %>
+</cite>
+
+<% if comment.user == current_user %>
+  <p class="post_line">
+    <%= link_to 'Editar', edit_post_comment_path(@post, comment), class: "btn btn-edit", remote: true %> 
+    <%= link_to 'Apagar', comment_path(comment), method: :delete, class: "btn btn-delete"%>
+  </p>
+<% end %>
+
+<hr class="divider">

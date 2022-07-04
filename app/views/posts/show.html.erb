@@ -2,7 +2,7 @@
 
 <%= link_to 'Voltar', posts_path %>
 
-<hr>
+<hr class="divider">
 
 <h3>
   Titulo:
@@ -25,9 +25,18 @@
   <%= @post.user.username %> 
 </p>
 
-<hr>
-
-<p>
-  <%= link_to 'Editar', edit_post_path(@post) %> | 
-  <%= link_to 'Apagar', post_path(@post), method: :delete%>
+<p class="post_line">
+  <%= link_to 'Editar', edit_post_path(@post), class: "btn btn-edit" %>
+  <%= link_to 'Apagar', post_path(@post), method: :delete, class: "btn btn-delete" %>
 </p>
+
+
+<br>
+  <strong>Add comment:</strong>
+  <%= render 'comments/form', post: @post %>
+<br>
+
+
+<hr class="divider">
+
+<%= render @post.comments.reverse %>

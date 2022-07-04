@@ -32,11 +32,12 @@
  .post_line {
   display: flex;
   justify-content: space-between;
+  min-width: 120px;
   margin: 10px 0;
  }
 
  .actions {
-  margin: 0 5px;
+  margin: 0px 5px;
  }
  .divider {
   height: 1px;

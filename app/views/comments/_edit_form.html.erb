@@ -1,0 +1,21 @@
+<span id="comment_target_form">
+  <%= form_with model: @comment, remote: false  do |f| %>
+    <p>
+      <%= f.label :body, "Comentário:" %>
+    </p>
+    <p>
+      <%= f.text_area :body, rows: 8, cols: 25%>
+    </p>
+
+    <%= f.hidden_field :post_id, value: @post.id %>
+    
+    <%= f.submit class: 'hidden', id: 'comment_submit'%>
+
+      <p class="container">
+
+        <%= link_to 'Salvar', "javascript:document.querySelector('#comment_submit').click()",
+                    class: 'btn btn-persist',
+                    method: :put %>
+    </p>
+  <% end %>
+<span>
