@@ -1,0 +1,12 @@
+<h1>
+  Hi, there was a new comment posted on  post <%= @post.title.truncate(10) %>
+</h1>
+
+<p>
+  <b>Comment:</b>
+  <%= @comment.body.truncate(30) %>
+</p>
+
+<p>
+  To send a reply or read full comment, visit: <%= link_to @post.title.truncate(10), post_url(@post) %>
+</p>
