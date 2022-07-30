@@ -1,0 +1,15 @@
+<h1>Novo momentário ao seu post</h1>
+
+<p>
+  <b>Post: </b>
+  <%= @post.title.truncate(10) %>
+</p>
+
+<p>
+  <b>Comentario: </b>
+  <%= @comment.body.truncate(10) %>
+</p>
+<p>
+  para saber mais detalhes:
+  <%= link_to 'clique aqui para ver mais detalhes', post_url(@post), class: 'link' %>
+</p>
