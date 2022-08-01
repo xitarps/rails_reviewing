@@ -9,7 +9,7 @@ class CommentMailer < ApplicationMailer
     @comment = comment
     @post = @comment.post
     @email = @post.user.email
-
+    sleep 5 # to show insede sidekiq dashboard
     mail(to: @email,
     subject: "New post posted for #{ @post.title.truncate(10) }")
   end
